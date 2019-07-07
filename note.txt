@@ -1,0 +1,352 @@
+React course note: js library , dev by facebook
+
+for building UI
+
+other player are angular and vue
+
+its a tree componnet:
+components: ui, app is the root component 
+
+component: 
+app: 
+ -navbar, profile, trends, 
+     feed, 
+        tweet, 
+        like
+
+class tweet{
+
+state = {}
+render(){
+}
+}
+
+output is real element
+virtual dom
+
+
+it basically update or react with changes
+
+no need dom or attach addEventListener()
+
+each component is a piece of UI
+
+using javascript: 
+
+virtual dom         real dom
+react element    dom element
+
+change state: react will automatically update the state change and update the dom.
+
+angualr and react 
+
+react is a library: 
+angular is a framework: complete solution
+
+React: update the changes.. 
+
+* routing, calling http services need for react library
+
+
+
+setup dev environment:
+
+1. download nodejs software and install
+2. install visual studio code
+3. install extension simple react snippets and prettier code formatter
+
+formatting and changes:
+
+
+
+code: 
+
+create a simple project:
+
+go to designation folder:
+
+-create-react-app react-app
+it will create dev server, web pack, babel
+zero configuration;
+
+to edit this environment run the following command: 
+-npm run eject
+
+now go to new folder and run the following command to start the new application: 
+
+
+cmd+d
+
+---------------
+classess in javascript
+
+babel is modern js compiler. 
+
+hot module reloading. 
+
+run npm: nmp start 
+
+//vanilla js
+document.getElementById
+----------------------
+
+in real world, use component to produce complex markup. 
+
+need configuration. 
+eject.: to customize tools
+build: to minimize
+
+all the complextiy in package.json folder. 
+
+Requirejs vs Reactjs
+- Requirejs is javascript file and module loader. It is optimized for the browser. It can be used for JS environment. 
+
+
+eject: do need to know details. 
+
+full stack architecture:
+
+front end, back end
+clinet - server using http protocol..
+using front end here. 
+
+Node+Express / JavaScript
+backend : mongo db.
+
+structure course: 
+
+Js: let vs const.
+
+object, this, arrow functs, descturcring, p
+
+---------------------
+function sayHello() {
+  for (var i = 0; i < 5; i++) {
+    console.log(i);
+  }
+  console.log(i);//i accessible inside in method.
+}
+sayHello();
+
+let removes the problem above:
+
+i is only accessible inside that blok
+--------------
+var -> function scope: i is accessible in anywhere in side
+let -> block scope or loop inside is accessible 
+//const-> block scope
+
+//let only use: when reassign the variable. 
+
+
+// import React from 'react';
+// import ReactDOM from 'react-dom';
+
+// const element = <h1>Hello world</h1>;
+// ReactDOM.render(element, document.getElementById('root'));
+// console.log('Hey, there, ok, no, noooo');
+
+function sayHello() {
+  for (let i = 0; i < 5; i++) {
+    console.log(i);
+  }
+  //  console.log(i);//i accessible inside in method. but in let //only accessible to loop
+}
+sayHello();
+const x = 1;
+x = 2;
+
+const person = {
+  name: "mosh",
+  walk() {},
+  talk() {}
+};
+
+person.talk();
+person["name"] = "John"; //use when we don't know what is to be assigned
+
+const targetMember = "name";
+person[targetMember.value] = "John";
+
+/
+
+--------this keyword
+
+js: person.walk is a object.
+
+const walk = person.walk.bind(person);
+walk(); //walk acts like object
+
+functions bind is used many places. 
+
+Arrow functions:
+
+all are same square function below: 
+
+const square = function(number) {
+  return number * number;
+};
+
+find active jobs from collection or list using filter:
+
+ const jobs = [
+     {id: 1, isActive: true},
+     {id: 2, isActive: true},
+     {id: 3, isActive: false},
+ ];
+
+ const activeJobs = 
+    jobs.filter(function(job){ return job.isActive})
+console.log(activeJobs.length);
+
+-----------
+ const jobs = [
+     {id: 1, isActive: true},
+     {id: 2, isActive: true},
+     {id: 3, isActive: false},
+ ];
+
+ const activeJobs = 
+    jobs.filter(function(job){ return job.isActive});
+console.log(activeJobs.length);
+const activeJob2 = jobs.filter(job=>job.isActive == false);
+console.log(activeJob2.length);
+------------------
+
+
+const square = number => {
+  return number * number;
+};
+
+const square = number => {
+  return number * number;
+};
+//here number is parameter
+const square = number => number * number;
+
+-------------------------
+//Arrow  function and this
+//arrow function don't bind this
+
+arrow functin don't need this. it inherits this.    
+--------------------
+Arrow function don't rebind this keyword.
+
+Template literal:
+ const colors = ['red', 'blue','green'];
+ const items = colors.map(color => `<li>${color}</li>`);
+ console.log(items);
+
+Object desctructure:
+
+instead of the following: 
+ const address = {
+     street: '',
+     city: '',
+     country: ''
+ };
+
+ const street = address.street;
+ const city = address.city;
+ const country = address.country;
+
+ we can write: 
+
+ 
+ const address = {
+     street: '',
+     city: '',
+     country: ''
+ };
+ 
+ const {street, city, country} = address;
+
+const{street: st}=address;
+----------------------
+
+spread opeartor:
+combine from the middle.
+
+const f = [2, 3,4];
+const s=[4,5,6];
+
+const combined = f.concat(s);
+console.log(combined);
+
+const com = [...f,'a', 'd', ...s];
+console.log(com);
+
+---------------
+combine two objects: 
+const f = {name: 'Mosh'};
+const s ={job: 'Teacher'};
+
+const combined = {...f, ...s};
+const combined2 = {...f, ...s, address:'2202 West pensa, USA'};
+
+console.log(combined2);
+
+clone object:
+const clone = {...f};
+console.log(clone);
+
+------
+
+shortcut: to move the code: 
+
+press alt then press down arrow;
+
+
+inherit:
+
+module: 
+
+
+
+each file a module
+
+ecmascript 6
+
+
+
+           all the dependency in module folder
+
+                \
+default and name space:
+export to export is promote. htis is called named export.
+
+tips: classess technically object in java encapsuation.
+
+
+                                                                                                                                                                                                                                                                                                                                                                                                                   
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
